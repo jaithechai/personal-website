@@ -6,9 +6,7 @@ export default function ContactPage() {
   return (
     <>
       <Navigation />
-      <main>
-        <Contact />
-      </main>
+      <Contact />
       <Footer />
     </>
   );

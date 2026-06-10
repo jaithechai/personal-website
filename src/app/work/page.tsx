@@ -6,9 +6,7 @@ export default function WorkPage() {
   return (
     <>
       <Navigation />
-      <main>
-        <Work />
-      </main>
+      <Work />
       <Footer />
     </>
   );

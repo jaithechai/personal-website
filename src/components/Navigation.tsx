@@ -1,44 +1,31 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Work", href: "/work" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 18);
-
-      const sections = ["home", "about", "work", "contact"];
-      for (const id of [...sections].reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 128) {
-          setActive(id);
-          break;
-        }
-      }
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 18);
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    setMobileOpen(false);
-    const id = href.replace("#", "");
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <>
@@ -50,33 +37,34 @@ export default function Navigation() {
       >
         <div className="page-shell">
           <div className="flex items-center justify-between h-16">
-            <button
-              onClick={() => handleNavClick("#home")}
+            <Link
+              href="/"
               className="font-display text-2xl tracking-tight text-text-primary"
             >
               Jai Dilbaghi
-            </button>
+            </Link>
 
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map(({ label, href }) => {
-                const id = href.replace("#", "");
-                const isActive = active === id;
-
-                return (
-                  <button
-                    key={label}
-                    onClick={() => handleNavClick(href)}
-                    className={`px-3 py-2 text-sm font-medium transition-colors ${
-                      isActive ? "text-text-primary" : "text-text-muted hover:text-text-primary"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
-              <a href="#contact" className="ml-2 btn-secondary">
+              {navLinks.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive(href)
+                      ? "text-text-primary"
+                      : "text-text-muted hover:text-text-primary"
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
+              <Link
+                href="/contact"
+                className="ml-2 btn-primary"
+                style={{ borderRadius: "0.6rem" }}
+              >
                 Contact
-              </a>
+              </Link>
             </div>
 
             <button
@@ -101,17 +89,15 @@ export default function Navigation() {
           >
             <div className="page-shell py-3 flex flex-col gap-2">
               {navLinks.map(({ label, href }) => (
-                <button
+                <Link
                   key={label}
-                  onClick={() => handleNavClick(href)}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
                   className="text-left px-2 py-3 text-sm text-text-secondary hover:text-text-primary"
                 >
                   {label}
-                </button>
+                </Link>
               ))}
-              <a href="#contact" onClick={() => setMobileOpen(false)} className="btn-secondary w-fit">
-                Contact
-              </a>
             </div>
           </motion.div>
         )}
