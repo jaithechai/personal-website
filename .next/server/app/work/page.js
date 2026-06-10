@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/work/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__19nsuj0._.js")
+R.c("server/chunks/ssr/1rod_next_dist_esm_build_templates_app-page_1wjttbq.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0lg-ff2._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__03_2nsi._.js")
+R.c("server/chunks/ssr/jai-portfolio_src_app_layout_tsx_0b6t97u._.js")
+R.c("server/chunks/ssr/1rod_next_dist_client_components_14mzhli._.js")
+R.c("server/chunks/ssr/1rod_next_dist_client_components_builtin_forbidden_0ckmoww.js")
+R.c("server/chunks/ssr/1rod_next_dist_client_components_builtin_unauthorized_0i2l191.js")
+R.c("server/chunks/ssr/1rod_next_dist_client_components_builtin_global-error_1pceedn.js")
+R.c("server/chunks/ssr/jai-portfolio__next-internal_server_app_work_page_actions_06n14w5.js")
+R.m(76581)
+module.exports=R.m(76581).exports
