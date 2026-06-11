@@ -9,7 +9,6 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navigation() {
@@ -61,7 +60,11 @@ export default function Navigation() {
               <Link
                 href="/contact"
                 className="ml-2 btn-primary"
-                style={{ borderRadius: "0.6rem" }}
+                style={{
+                  borderRadius: "0.6rem",
+                  background: "var(--accent-1)",
+                  borderColor: "var(--accent-1)",
+                }}
               >
                 Contact
               </Link>
@@ -98,6 +101,18 @@ export default function Navigation() {
                   {label}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="btn-primary mt-1"
+                style={{
+                  borderRadius: "0.6rem",
+                  background: "var(--accent-1)",
+                  borderColor: "var(--accent-1)",
+                }}
+              >
+                Contact
+              </Link>
             </div>
           </motion.div>
         )}
