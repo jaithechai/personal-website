@@ -3,12 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import {
-  GITHUB_URL,
-  LINKEDIN_URL,
-  RESUME_DOWNLOAD_NAME,
-  RESUME_PATH,
-} from "@/lib/site";
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -57,9 +52,8 @@ export default function Hero() {
                   Contact
                 </a>
                 <a
-                  href={RESUME_PATH}
+                  href={RESUME_URL}
                   className="btn-secondary"
-                  download={RESUME_DOWNLOAD_NAME}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
