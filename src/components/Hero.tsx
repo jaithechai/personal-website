@@ -3,6 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import {
+  GITHUB_URL,
+  LINKEDIN_URL,
+  RESUME_DOWNLOAD_NAME,
+  RESUME_PATH,
+} from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -50,7 +56,13 @@ export default function Hero() {
                 <a className="btn-secondary" href="/contact">
                   Contact
                 </a>
-                <a href="/resume.pdf" className="btn-secondary" download="">
+                <a
+                  href={RESUME_PATH}
+                  className="btn-secondary"
+                  download={RESUME_DOWNLOAD_NAME}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Resume
                 </a>
               </motion.div>
@@ -65,7 +77,7 @@ export default function Hero() {
                 </span>
                 <div className="h-px w-10 bg-[var(--border)]"></div>
                 <a
-                  href="https://github.com/jaidilbaghi"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
@@ -74,7 +86,7 @@ export default function Hero() {
                   <Github size={15} className="lucide lucide-github" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/jaidilbaghi"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"

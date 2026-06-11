@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
+import { GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -36,25 +37,25 @@ export default function Contact() {
                   </span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/jaidilbaghi"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-baseline gap-3 text-sm"
                 >
                   <span className="w-20 text-text-muted">LinkedIn</span>
                   <span className="text-text-primary group-hover:text-[var(--accent-1)]">
-                    /in/jaidilbaghi
+                    /in/jai-dilbaghi-a0996a289
                   </span>
                 </a>
                 <a
-                  href="https://github.com/jaidilbaghi"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-baseline gap-3 text-sm"
                 >
                   <span className="w-20 text-text-muted">GitHub</span>
                   <span className="text-text-primary group-hover:text-[var(--accent-1)]">
-                    /jaidilbaghi
+                    /jaithechai
                   </span>
                 </a>
               </div>
