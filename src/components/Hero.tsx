@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/site";
+import { GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -50,14 +50,6 @@ export default function Hero() {
                 </a>
                 <a className="btn-secondary" href="/contact">
                   Contact
-                </a>
-                <a
-                  href={RESUME_URL}
-                  className="btn-secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Resume
                 </a>
               </motion.div>
               <motion.div
