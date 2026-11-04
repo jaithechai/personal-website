@@ -1,53 +1,51 @@
 import type { Metadata } from "next";
+import { Archivo, Martian_Mono } from "next/font/google";
+import Navigation from "@/components/Navigation";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
-
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
+  display: "swap",
+  variable: "--font-archivo",
+});
+const martian = Martian_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+  variable: "--font-martian",
+});
 export const metadata: Metadata = {
-  title: "Jai Dilbaghi | ECE at UT Austin",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Jai Dilbaghi | Electrical and Computer Engineering",
+    template: "%s | Jai Dilbaghi",
+  },
   description:
-    "Jai Dilbaghi is a freshman in ECE at UT Austin. Electrical and Telemetry Lead on Plano Green Team and machine learning research intern at UT Dallas.",
-  keywords: [
-    "Jai Dilbaghi",
-    "UT Austin",
-    "ECE",
-    "solar car",
-    "Plano Green Team",
-    "Solar Car Challenge",
-    "KiCad",
-    "machine learning",
-    "computer vision",
-    "iCode",
-    "Texas",
-  ],
+    "Electrical and computer engineering at UT Austin. Jai Dilbaghi designed solar car circuits as Electrical Lead and researched machine learning at UT Dallas.",
   authors: [{ name: "Jai Dilbaghi" }],
-  creator: "Jai Dilbaghi",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Jai Dilbaghi | ECE at UT Austin",
+    siteName: "Jai Dilbaghi",
+    title: "Jai Dilbaghi | Electrical and Computer Engineering",
     description:
-      "Freshman in ECE at UT Austin, with work in solar car electrical systems and machine learning research.",
-    siteName: "Jai Dilbaghi Portfolio",
+      "KiCad circuits, solar car electrical systems, and machine learning research.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Jai Dilbaghi | ECE at UT Austin",
-    description:
-      "Freshman in ECE at UT Austin, with work in solar car electrical systems and machine learning research.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  twitter: { card: "summary_large_image" },
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className={`${archivo.variable} ${martian.variable}`}>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

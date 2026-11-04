@@ -1,148 +1,99 @@
-"use client";
-
+import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import { GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
+import { projects, highlights } from "@/lib/content";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/site";
+import { SymbolHeader, ProjectMedia } from "./Schematic";
 
 export default function Hero() {
   return (
-    <main>
-      <section className="relative pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="page-shell">
-          <div className="grid lg:grid-cols-[1fr_0.85fr] gap-10 lg:gap-14 items-center">
-            <div>
-              <motion.h1
-                className="font-display text-6xl md:text-7xl leading-[0.92] tracking-tight max-w-2xl"
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.05 }}
-              >
-                About Me
-              </motion.h1>
-              <motion.p
-                className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-text-secondary"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.1 }}
-              >
-                I&apos;m Jai, a freshman studying ECE at UT Austin. I like building
-                things that have a clear use, especially solar car electrical
-                systems and machine learning research.
-              </motion.p>
-              <motion.p
-                className="mt-4 max-w-xl text-base md:text-lg leading-relaxed text-text-secondary"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.15 }}
-              >
-                I care about doing useful work, learning quickly, and being part
-                of teams where people depend on each other.
-              </motion.p>
-              <motion.div
-                className="mt-8 flex flex-wrap gap-3"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.2 }}
-              >
-                <a className="btn-primary" href="/work">
-                  See work <ArrowRight size={15} className="lucide lucide-arrow-right" />
-                </a>
-                <a className="btn-secondary" href="/contact">
-                  Contact
-                </a>
-              </motion.div>
-              <motion.div
-                className="mt-8 flex items-center gap-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.45, delay: 0.2 }}
-              >
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-text-muted">
-                  Links
-                </span>
-                <div className="h-px w-10 bg-[var(--border)]"></div>
-                <a
-                  href={GITHUB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="flex h-9 w-9 items-center justify-center border border-[var(--border)] text-text-muted hover:text-text-primary"
-                >
-                  <Github size={15} className="lucide lucide-github" />
-                </a>
-                <a
-                  href={LINKEDIN_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="flex h-9 w-9 items-center justify-center border border-[var(--border)] text-text-muted hover:text-text-primary"
-                >
-                  <Linkedin size={15} className="lucide lucide-linkedin" />
-                </a>
-                <a
-                  href="mailto:jai.dilbaghi@gmail.com"
-                  rel="noopener noreferrer"
-                  aria-label="Email"
-                  className="flex h-9 w-9 items-center justify-center border border-[var(--border)] text-text-muted hover:text-text-primary"
-                >
-                  <Mail size={15} className="lucide lucide-mail" />
-                </a>
-              </motion.div>
-            </div>
-            <div className="flex flex-col gap-5 lg:pt-1">
-              <motion.div
-                className="relative lg:self-start"
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.45, delay: 0.1 }}
-              >
-                <div className="relative w-full max-w-sm overflow-hidden">
-                  <Image
-                    alt="Jai Dilbaghi portrait"
-                    width={640}
-                    height={640}
-                    priority
-                    src="/headshot.jpg"
-                    className="h-auto w-full object-cover object-top"
-                  />
-                </div>
-              </motion.div>
-              <motion.div
-                className="max-w-sm"
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.15 }}
-              >
-                <ul className="space-y-2 text-sm leading-relaxed text-text-secondary">
-                  <li className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>ECE at UT Austin, class of 2030</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>
-                      Electrical and Telemetry Lead, Plano Green Team. 2nd in
-                      Advanced Classic at the 2026 Solar Car Challenge
-                    </span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>ML and computer vision research at UT Dallas</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>
-                      Y Combinator Startup School 2026, $25,000+ in AI and cloud
-                      credits
-                    </span>
-                  </li>
-                </ul>
-              </motion.div>
-            </div>
+    <main id="main" className="page-shell home-page">
+      <section className="hero">
+        <div className="hero-copy">
+          <h1>Jai Dilbaghi</h1>
+          <p className="lead">
+            Electrical and computer engineering at UT Austin. I design circuits,
+            build them, and debug them on the road.
+          </p>
+          <p>Looking for Summer 2027 internships and research.</p>
+          <div className="actions">
+            <Link href="/work" className="button">
+              See work <span aria-hidden="true">↗</span>
+            </Link>
+            <Link href="/contact" className="button secondary">
+              Contact
+            </Link>
+          </div>
+          <div className="social-links">
+            <a href={GITHUB_URL}>GitHub</a>
+            <a href={LINKEDIN_URL}>LinkedIn</a>
+            <a href={`mailto:${EMAIL}`}>Email</a>
           </div>
         </div>
+        <div className="hero-photos">
+          <figure className="photo-symbol portrait">
+            <div className="photo-label">
+              <span>J1</span>
+              <span>Jai Dilbaghi</span>
+            </div>
+            <Image
+              src="/headshot.jpg"
+              alt="Jai Dilbaghi wearing a suit and tie in front of an orange wall."
+              width={800}
+              height={800}
+              sizes="(max-width: 767px) 45vw, 200px"
+              priority
+            />
+          </figure>
+          <figure className="photo-symbol car">
+            <div className="photo-label">
+              <span>J2</span>
+              <span>Plano Green Team</span>
+            </div>
+            <ProjectMedia project={projects[0]} />
+          </figure>
+        </div>
       </section>
+      <section className="selected section" aria-labelledby="selected-work">
+        <div className="section-heading selected-heading">
+          <h2 id="selected-work">Selected work</h2>
+          <Link href="/work">All work ↗</Link>
+        </div>
+        <article className="selected-operations">
+          <Link href="/work#solar-car" className="symbol-link">
+            <SymbolHeader project={projects[0]} linked />
+          </Link>
+          <div>
+            <p>{projects[0].summary}</p>
+            <Link href="/work#solar-car">Explore the electrical system ↗</Link>
+          </div>
+        </article>
+        <div className="pcb-pair selected-pcbs">
+          {projects.slice(1, 3).map((project) => (
+            <article key={project.id}>
+              <Link href={`/work#${project.id}`} className="symbol-link">
+                <SymbolHeader project={project} linked />
+              </Link>
+              <ProjectMedia project={project} />
+              <p>{project.summary}</p>
+              <Link href={`/work#${project.id}`}>Explore the PCB ↗</Link>
+            </article>
+          ))}
+        </div>
+        <article className="selected-operations">
+          <Link href="/work#agentic-operations" className="symbol-link">
+            <SymbolHeader project={projects[3]} linked />
+          </Link>
+          <div>
+            <p>{projects[3].summary}</p>
+            <Link href="/work#agentic-operations">Explore the system ↗</Link>
+          </div>
+        </article>
+      </section>
+      <ul className="highlights">
+        {highlights.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </main>
   );
 }

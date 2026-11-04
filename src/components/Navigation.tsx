@@ -1,122 +1,66 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Work", href: "/work" },
+import { useEffect, useState } from "react";
+const links = [
+  ["Home", "/"],
+  ["Work", "/work"],
+  ["About", "/about"],
+  ["Contact", "/contact"],
 ];
-
 export default function Navigation() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [enhanced, setEnhanced] = useState(false);
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 18);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    setEnhanced(true);
   }, []);
-
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
-
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
   return (
-    <>
-      <motion.nav
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.45 }}
-        className={`fixed top-0 left-0 right-0 z-50 ${scrolled ? "nav-bar" : "bg-transparent"}`}
-      >
-        <div className="page-shell">
-          <div className="flex items-center justify-between h-16">
+    <header className="site-header">
+      <nav className="page-shell nav-inner" aria-label="Main navigation">
+        <Link href="/" className="brand">
+          <svg viewBox="0 0 40 32" width="40" height="32" aria-hidden="true">
+            <path d="M0 16h10m20 0h10" stroke="var(--wire)" strokeWidth="2" />
+            <rect
+              x="10"
+              y="6"
+              width="20"
+              height="20"
+              fill="var(--symbol-fill)"
+              stroke="var(--symbol-line)"
+              strokeWidth="2"
+            />
+          </svg>
+          <span>Jai Dilbaghi</span>
+        </Link>
+        <button
+          className="menu-button button"
+          aria-expanded={open}
+          aria-controls="site-menu"
+          onClick={() => setOpen(!open)}
+          hidden={!enhanced}
+        >
+          Menu
+        </button>
+        <div
+          id="site-menu"
+          className={`nav-links ${enhanced ? "enhanced" : ""} ${open ? "is-open" : ""}`}
+        >
+          {links.map(([label, href]) => (
             <Link
-              href="/"
-              className="font-display text-2xl tracking-tight text-text-primary"
+              key={href}
+              href={href}
+              aria-current={pathname === href ? "page" : undefined}
+              onClick={() => setOpen(false)}
             >
-              Jai Dilbaghi
+              {label}
             </Link>
-
-            <div className="hidden md:flex items-center gap-1">
-              {navLinks.map(({ label, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors ${
-                    isActive(href)
-                      ? "text-text-primary"
-                      : "text-text-muted hover:text-text-primary"
-                  }`}
-                >
-                  {label}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                className="ml-2 btn-primary"
-                style={{
-                  borderRadius: "0.6rem",
-                  background: "var(--accent-1)",
-                  borderColor: "var(--accent-1)",
-                }}
-              >
-                Contact
-              </Link>
-            </div>
-
-            <button
-              onClick={() => setMobileOpen((open) => !open)}
-              className="md:hidden border border-[var(--border)] px-3 py-2 text-sm font-mono uppercase tracking-wider"
-              aria-label="Toggle menu"
-            >
-              Menu
-            </button>
-          </div>
+          ))}
         </div>
-      </motion.nav>
-
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-16 z-40 md:hidden nav-bar"
-          >
-            <div className="page-shell py-3 flex flex-col gap-2">
-              {navLinks.map(({ label, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-left px-2 py-3 text-sm text-text-secondary hover:text-text-primary"
-                >
-                  {label}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="btn-primary mt-1"
-                style={{
-                  borderRadius: "0.6rem",
-                  background: "var(--accent-1)",
-                  borderColor: "var(--accent-1)",
-                }}
-              >
-                Contact
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+      </nav>
+    </header>
   );
 }
