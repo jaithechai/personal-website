@@ -3,42 +3,47 @@
 import { motion } from "framer-motion";
 
 const glance = [
-  "Electrical and telemetry lead on Plano Green Team. The team is not affiliated with Liberty High School.",
-  "Worked on computer vision and machine learning projects at UTD labs.",
-  "Built web projects, including work on the Green Portfolio Project.",
-  "Freshman in UT Austin ECE, class of 2030. SAT 1540. Took 18 AP courses.",
+  "Electrical and Telemetry Lead on Plano Green Team, 2024 to 2026. Safety Officer before that.",
+  "Machine learning and computer vision research at UT Dallas.",
+  "Led a 15-person electrical subteam and raised $50,000+ from 30+ sponsors across three seasons.",
+  "Freshman in UT Austin ECE, class of 2030.",
 ];
 
 const timeline = [
   {
     year: "2023",
     title: "Joined Plano Green Team",
-    text: "Started working on the solar car as Safety Officer, then moved into electrical systems, telemetry, and race support.",
+    text: "Started on the solar car as Safety Officer, then moved into electrical systems, telemetry, and race support.",
   },
   {
     year: "2024",
-    title: "UTD workshop project",
-    text: "Co-built a real time gym form system with Python and XGBoost, then presented it to graduate students and professors.",
+    title: "UT Dallas Deep-Dive AI Workshop",
+    text: "Co-developed a computer-vision gym-form classifier in Python with XGBoost and placed top 10 of 40 projects.",
   },
   {
     year: "2024",
     title: "Solar car results",
-    text: "Helped the team finish 4th nationally while raising more than $25K from sponsors.",
-  },
-  {
-    year: "2024",
-    title: "Green Portfolio Project",
-    text: "Worked as a website developer on a project for aspiring young entrepreneurs. Focused on HTML structure, communication, and adaptability.",
+    text: "Team finished 4th in the nation in the Advanced Division.",
   },
   {
     year: "2025",
-    title: "UTD DEIL Lab",
-    text: "Built a CNN from scratch for autonomous driving image classification and reached 95% plus accuracy.",
+    title: "iCode School",
+    text: "Joined as a STEM Instructor and wrote a K-12 curriculum running from block coding to advanced Python and AI.",
   },
   {
     year: "2025",
-    title: "iCode",
-    text: "Started work in 2025 and kept building around coding, teaching, and student support.",
+    title: "UT Dallas research",
+    text: "Tuned an existing CNN for autonomous-driving image classification, owned the validation, and reached 95%+ accuracy.",
+  },
+  {
+    year: "2025",
+    title: "Solar car results",
+    text: "Team finished 4th in the nation in the Advanced Classic Division.",
+  },
+  {
+    year: "2026",
+    title: "2nd in Advanced Classic",
+    text: "Placed 2nd in the Advanced Classic Division at the Solar Car Challenge, a cross-country race across Texas, leading the electrical subsystem through design, build, and on-road race operations.",
   },
   {
     year: "2026",
@@ -63,8 +68,8 @@ export default function About() {
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">
                 I like projects where the work is real and the result matters.
-                That has led me to solar cars, research, websites, and
-                student-focused tech.
+                That has led me to solar cars, machine learning research, and
+                teaching.
               </p>
             </div>
           </motion.div>

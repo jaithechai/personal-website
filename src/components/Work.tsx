@@ -8,115 +8,125 @@ const projects = [
     title: "Solar Car Electrical System",
     org: "Plano Green Team",
     description:
-      "Designed and built electrical systems for a competitive solar race car. I worked on telemetry, RF wireless steering, the propulsion path, and KiCad layouts. I also programmed a Raspberry Pi for live data and helped set up InfluxDB and Grafana dashboards for race strategy.",
+      "Led the electrical subsystem of a competitive solar race car through design, build, and on-road race operations. Designed all 5 of the car's circuits in KiCad across three seasons, covering pack wiring, sensing, and control, then built each one out in hardware and integrated it with the mechanical team's chassis. Built and installed the telemetry hardware (sensors, wiring, and the RF link) that fed the team's live race-strategy dashboards. Moved the driver's turn signals, hazards, and horn onto a wheel-mounted remote by integrating an RF-activated relay into the low-voltage system, with no cable through the steering column.",
     highlights: [
-      "4th nationally in the Advanced Division",
-      "$25K plus raised from sponsors",
-      "Real time telemetry and dashboards",
+      "2nd in Advanced Classic, 2026 Solar Car Challenge",
+      "$50,000+ raised from 30+ sponsors",
+      "Live telemetry across 500 race miles",
     ],
-    tech: "KiCad / Python / Raspberry Pi / InfluxDB / Grafana",
+    tech: "KiCad schematics / Wire harnessing / Telemetry hardware / RF integration / EMI-aware layout / Raspberry Pi integration",
     image: "/work-solar-car.png",
     imgW: 1584,
     imgH: 891,
   },
   {
     title: "Autonomous Driving CNN",
-    org: "UTD DEIL Lab",
+    org: "Data-Efficient Intelligent Learning Lab, UT Dallas",
     description:
-      "Built a convolutional neural network from scratch for autonomous driving image classification. I tuned the model with GridSearchCV, reviewed results with F1 score and confusion matrices, and presented the work to faculty and graduate mentors. The project reached 95 percent plus accuracy and was recognized as a strong intern project.",
+      "Tuned an existing convolutional neural network with GridSearchCV as part of the lab's research team, reaching 95%+ accuracy classifying autonomous-driving images. Owned model validation: evaluated with F1-score and confusion matrices, visualized results in Seaborn, and presented the findings to faculty and graduate mentors.",
     highlights: [
-      "95 percent plus accuracy",
-      "Built from scratch",
-      "Presented to mentors",
+      "95%+ classification accuracy",
+      "Owned validation and metrics",
+      "Presented to faculty and graduate mentors",
     ],
-    tech: "Python / CNN / GridSearchCV / Computer Vision",
+    tech: "Python / scikit-learn / GridSearchCV / Seaborn / Computer Vision",
     image: "/work-cnn.png",
     imgW: 952,
     imgH: 640,
   },
   {
-    title: "Real Time Gym Form Analyzer",
-    org: "UTD Deep Dive AI Workshop",
+    title: "Gym Form Classifier",
+    org: "Deep-Dive AI Workshop, UT Dallas",
     description:
-      "Co-built a computer vision system that analyzes workout form in real time and gives feedback from video input. I worked in Python with XGBoost, tested multiple datasets, and helped tune the model before presenting it to graduate students and professors. The project finished top 10 out of 40.",
+      "Co-developed a computer-vision gym-form classifier in Python with XGBoost, leading the experimentation, tuning, and evaluation. Built the pipeline end to end: extracted concentric rep times from lifting video using ArUco marker tracking, combined them with lifter attributes, and classified reps-in-reserve into three intensity bands. Placed top 10 of 40 projects.",
     highlights: [
       "Top 10 of 40 projects",
-      "Real time feedback",
-      "Multi dataset testing",
+      "ArUco-based rep-time extraction",
+      "Three-band reps-in-reserve classification",
     ],
     tech: "Python / XGBoost / Computer Vision",
     image: "/work-gym.png",
     imgW: 916,
     imgH: 834,
   },
-  {
-    title: "Green Portfolio Project Website",
-    org: "Website Developer, internship",
-    description:
-      "Worked on a website for aspiring young entrepreneurs. I helped structure the site in HTML, kept the pages easy to navigate, and worked with the team as the project changed.",
-    highlights: [
-      "HTML structure and navigation",
-      "Team collaboration",
-      "Work in progress",
-    ],
-    tech: "HTML / CSS / Responsive Design",
-    image: "/work-green-portfolio.png",
-    imgW: 955,
-    imgH: 499,
-  },
 ];
 
 const experience = [
   {
     role: "Electrical and Telemetry Lead",
-    period: "2023 to present",
-    org: "Plano Green Team",
+    period: "2024 to 2026",
+    org: "Plano Green Team, Solar Car Challenge. Safety Officer, 2023 to 2024",
     notes: [
-      "Built telemetry, RF steering, and propulsion support",
-      "Worked on live dashboards for race day decisions",
-      "Raised funds through sponsor outreach",
+      "Designed all 5 of the car's circuits in KiCad across three seasons and built each one out in hardware",
+      "Built and installed the telemetry hardware that fed live race-strategy dashboards over 500 miles at Texas Motor Speedway",
+      "Built the propulsion package: a 1,150 W solar array feeding a 5.2 kWh pack (52.1 V, 100 Ah) and motor, placed to keep EMI off the sensor and control lines",
+      "Led and trained a 15-person electrical subteam, all first-time members",
+      "Raised $50,000+ from 30+ sponsors across three seasons",
     ],
   },
   {
-    role: "Website Developer",
-    period: "Mar 2024 to Aug 2024",
-    org: "Green Portfolio Project",
+    role: "Research Intern, Machine Learning and Computer Vision",
+    period: "Summer 2025",
+    org: "Data-Efficient Intelligent Learning Lab, UT Dallas",
     notes: [
-      "Structured the site in HTML and CSS",
-      "Helped keep the project organized across the team",
-      "Focused on a simple, accessible build",
+      "Tuned an existing CNN with GridSearchCV to 95%+ accuracy on autonomous-driving images",
+      "Owned model validation with F1-score, confusion matrices, and Seaborn",
+      "Presented findings to faculty and graduate mentors",
     ],
   },
   {
-    role: "iCode",
-    period: "2025 to present",
-    org: "iCode",
+    role: "Research Intern, AI/ML",
+    period: "Summer 2024",
+    org: "Deep-Dive AI Workshop, UT Dallas",
     notes: [
-      "Started in 2025",
-      "Continued building around student technology work",
-      "Kept my coding work tied to real people and real classes",
+      "Co-developed a gym-form classifier in Python with XGBoost, leading the experimentation, tuning, and evaluation",
+      "Extracted concentric rep times from lifting video with ArUco marker tracking",
+      "Placed top 10 of 40 projects",
     ],
   },
   {
-    role: "ML and Computer Vision Research Intern",
-    period: "2025",
-    org: "UT Dallas, DEIL Lab",
+    role: "STEM Instructor",
+    period: "April 2025 to April 2026",
+    org: "iCode School, Plano, TX",
     notes: [
-      "Built a CNN from scratch",
-      "Reached 95 percent plus accuracy",
-      "Presented the project to faculty and mentors",
+      "Wrote the curriculum that took K-12 students from block coding to advanced Python and AI over a single year",
+      "Ran hands-on robotics and drone labs, teaching hardware and software side by side rather than as separate units",
     ],
   },
   {
-    role: "AI and ML Research Intern",
-    period: "2024",
-    org: "UT Dallas, Deep Dive Workshop",
+    role: "Leadership",
+    period: "2023 to 2026",
+    org: "Liberty High School",
     notes: [
-      "Co-built the gym form project",
-      "Used Python and XGBoost",
-      "Placed top 10 out of 40",
+      "Textbooks for Tomorrow (501(c)(3)), VP of Operations and Outreach: distributed 7,800+ books worth $65K across a 200+ volunteer operation",
+      "National Honor Society, Chapter President: led 380+ members to 7,700+ annual volunteer hours",
+      "Academic Decathlon, President: 3rd in Math in Texas at the 2025 State Finals",
     ],
   },
+];
+
+const skills = [
+  {
+    label: "Hardware / EE",
+    items:
+      "KiCad schematic design, wire harnessing and multi-family crimping, harness routing and strain relief, EMI-aware layout, driver-conscious placement, aluminum sheet metal fabrication, soldering, multimeter, Raspberry Pi integration",
+  },
+  {
+    label: "Software",
+    items: "Python, Java, Git/GitHub (branching, worktrees)",
+  },
+  {
+    label: "Data / ML",
+    items:
+      "XGBoost, scikit-learn, GridSearchCV, Seaborn, model evaluation and visualization",
+  },
+];
+
+const awards = [
+  "Solar Car Challenge: 2nd, Advanced Classic Division, 2026. 4th in Nation, Advanced Classic Division, 2025. 4th in Nation, Advanced Division, 2024.",
+  "Accepted and attended Y Combinator Startup School 2026; awarded $25,000+ in AI and cloud credits (OpenAI, Anthropic, AWS).",
+  "UT Dallas Battle of the Brains coding competition, Advanced Division Finalist, 2025.",
+  "BPA Nationals, Computer Networks.",
 ];
 
 export default function Work() {
@@ -241,6 +251,62 @@ export default function Work() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-12 section-divider"></div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.1 }}
+          >
+            <div className="mt-12 mb-6">
+              <h3 className="font-display text-3xl md:text-4xl leading-none">
+                Skills
+              </h3>
+            </div>
+          </motion.div>
+
+          <div className="space-y-6">
+            {skills.map((group) => (
+              <div
+                key={group.label}
+                className="border-t border-[var(--border)] pt-5"
+              >
+                <h4 className="font-display text-2xl leading-none">
+                  {group.label}
+                </h4>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                  {group.items}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 section-divider"></div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.1 }}
+          >
+            <div className="mt-12 mb-6">
+              <h3 className="font-display text-3xl md:text-4xl leading-none">
+                Awards
+              </h3>
+            </div>
+          </motion.div>
+
+          <ul className="space-y-3 border-t border-[var(--border)] pt-5">
+            {awards.map((award) => (
+              <li
+                key={award}
+                className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary"
+              >
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[var(--accent-1)]"></span>
+                <span>{award}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>
