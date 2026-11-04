@@ -27,8 +27,8 @@ export default function Hero() {
                 transition={{ duration: 0.45, delay: 0.1 }}
               >
                 I&apos;m Jai, a freshman studying ECE at UT Austin. I like building
-                things that have a clear use, especially solar car systems,
-                research projects, and web tools.
+                things that have a clear use, especially solar car electrical
+                systems and machine learning research.
               </motion.p>
               <motion.p
                 className="mt-4 max-w-xl text-base md:text-lg leading-relaxed text-text-secondary"
@@ -121,17 +121,21 @@ export default function Hero() {
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>Electrical and telemetry lead on Plano Green Team</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
                     <span>
-                      Research experience in computer vision and machine learning
+                      Electrical and Telemetry Lead, Plano Green Team. 2nd in
+                      Advanced Classic at the 2026 Solar Car Challenge
                     </span>
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>SAT 1540 and 18 AP courses</span>
+                    <span>ML and computer vision research at UT Dallas</span>
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
+                    <span>
+                      Y Combinator Startup School 2026, $25,000+ in AI and cloud
+                      credits
+                    </span>
                   </li>
                 </ul>
               </motion.div>

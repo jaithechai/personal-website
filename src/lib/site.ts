@@ -1,3 +1,3 @@
+export const SITE_URL = "https://jai-portfolio-cyan.vercel.app";
 export const GITHUB_URL = "https://github.com/jaithechai";
-export const LINKEDIN_URL =
-  "https://www.linkedin.com/in/jai-dilbaghi-a0996a289/";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/jaidilbaghi/";

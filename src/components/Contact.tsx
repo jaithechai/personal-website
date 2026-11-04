@@ -10,6 +10,9 @@ export default function Contact() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const subject = `Message from ${name}`;
+    const body = `${message}\n\nFrom: ${name} <${email}>`;
+    window.location.href = `mailto:jai.dilbaghi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -44,7 +47,7 @@ export default function Contact() {
                 >
                   <span className="w-20 text-text-muted">LinkedIn</span>
                   <span className="text-text-primary group-hover:text-[var(--accent-1)]">
-                    /in/jai-dilbaghi-a0996a289
+                    /in/jaidilbaghi
                   </span>
                 </a>
                 <a
@@ -112,6 +115,9 @@ export default function Contact() {
                 <button type="submit" className="btn-primary disabled:opacity-70">
                   Send
                 </button>
+                <p className="text-xs text-text-muted">
+                  Send opens your email app with this message filled in.
+                </p>
               </form>
             </div>
           </div>
