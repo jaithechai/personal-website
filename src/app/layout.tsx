@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Jai Dilbaghi | ECE at UT Austin",
   description:
-    "Jai Dilbaghi is a freshman in ECE at UT Austin. Electrical and Telemetry Lead on Plano Green Team and machine learning research intern at UT Dallas.",
+    "Jai Dilbaghi studies Electrical and Computer Engineering at UT Austin. He designs circuit boards and electrical systems in KiCad, and was Electrical Lead on Plano Green Team's solar car.",
   keywords: [
     "Jai Dilbaghi",
     "UT Austin",
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Plano Green Team",
     "Solar Car Challenge",
     "KiCad",
+    "PCB design",
     "machine learning",
     "computer vision",
     "iCode",
@@ -25,14 +26,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Jai Dilbaghi | ECE at UT Austin",
     description:
-      "Freshman in ECE at UT Austin, with work in solar car electrical systems and machine learning research.",
+      "ECE at UT Austin. Designs circuit boards in KiCad and was Electrical Lead on Plano Green Team's solar car.",
     siteName: "Jai Dilbaghi Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Jai Dilbaghi | ECE at UT Austin",
     description:
-      "Freshman in ECE at UT Austin, with work in solar car electrical systems and machine learning research.",
+      "ECE at UT Austin. Designs circuit boards in KiCad and was Electrical Lead on Plano Green Team's solar car.",
   },
   robots: {
     index: true,

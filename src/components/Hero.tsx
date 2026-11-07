@@ -26,9 +26,9 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.1 }}
               >
-                I&apos;m Jai, a freshman studying ECE at UT Austin. I like building
-                things that have a clear use, especially solar car electrical
-                systems and machine learning research.
+                I&apos;m Jai, an Electrical and Computer Engineering student at UT Austin.
+                I like building things that have a clear use, especially circuit boards,
+                electrical systems, and machine learning research.
               </motion.p>
               <motion.p
                 className="mt-4 max-w-xl text-base md:text-lg leading-relaxed text-text-secondary"
@@ -117,12 +117,12 @@ export default function Hero() {
                 <ul className="space-y-2 text-sm leading-relaxed text-text-secondary">
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
-                    <span>ECE at UT Austin, class of 2030</span>
+                    <span>ECE at UT Austin, Minor in Entrepreneurship</span>
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
                     <span>
-                      Electrical and Telemetry Lead, Plano Green Team. 2nd in
+                      Electrical Lead, Plano Green Team. 2nd in
                       Advanced Classic at the 2026 Solar Car Challenge
                     </span>
                   </li>
@@ -133,8 +133,7 @@ export default function Hero() {
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 bg-[var(--accent-1)]"></span>
                     <span>
-                      Y Combinator Startup School 2026, $25,000+ in AI and cloud
-                      credits
+                      Selected for Y Combinator Startup School 2026
                     </span>
                   </li>
                 </ul>

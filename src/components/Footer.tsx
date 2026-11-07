@@ -5,7 +5,7 @@ export default function Footer() {
         <div>
           <div className="font-display text-3xl leading-none">Jai Dilbaghi</div>
           <p className="mt-2 text-sm text-text-muted">
-            ECE at UT Austin. Builder. Researcher.
+            Electrical and Computer Engineering at UT Austin.
           </p>
         </div>
       </div>

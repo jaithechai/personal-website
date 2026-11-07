@@ -8,22 +8,46 @@ const projects = [
     title: "Solar Car Electrical System",
     org: "Plano Green Team",
     description:
-      "Led the electrical subsystem of a competitive solar race car through design, build, and on-road race operations. Designed all 5 of the car's circuits in KiCad across three seasons, covering pack wiring, sensing, and control, then built each one out in hardware and integrated it with the mechanical team's chassis. Built and installed the telemetry hardware (sensors, wiring, and the RF link) that fed the team's live race-strategy dashboards. Moved the driver's turn signals, hazards, and horn onto a wheel-mounted remote by integrating an RF-activated relay into the low-voltage system, with no cable through the steering column.",
+      "Designed all 5 of the car's circuits in KiCad over three seasons, drew the wiring diagrams, and built each: motor (HV), aux (LV), telemetry and array. Designed the high-voltage system from a 1,150 W solar array and 5.2 kWh pack (52.1 V, 100 Ah) through disconnects and contactors to the motor controller and motor, routed to keep EMI out of the sensor and control lines, and sized wire gauges and fuse ratings from each load's expected current draw. Built the LV aux system for lights and horn, the steering-wheel RF relay remote for turn signals, hazards and horn, and the Raspberry Pi telemetry hardware measuring pack voltage, state of charge and MPPT input power. Traced a race-day throttle loss to the motor controller overheating at 180 F, had the HV box ventilated with intake and exhaust holes and a fan, and the car finished the race.",
     highlights: [
       "2nd in Advanced Classic, 2026 Solar Car Challenge",
       "$50,000+ raised from 30+ sponsors",
-      "Live telemetry across 500 race miles",
+      "Live race-strategy data over 500 miles at Texas Motor Speedway",
     ],
-    tech: "KiCad schematics / Wire harnessing / Telemetry hardware / RF integration / EMI-aware layout / Raspberry Pi integration",
+    tech: "KiCad / HV and LV system design / Wire and fuse sizing / Raspberry Pi telemetry hardware / RF relay",
     image: "/work-solar-car.png",
     imgW: 1584,
     imgH: 891,
   },
   {
+    title: "Synchronous Buck Converter PCB",
+    org: "Personal project",
+    description:
+      "Designed a 2-layer synchronous buck (step-down) converter PCB around a TI TPS2832 gate driver with two power MOSFETs. Added op-amp current sensing on a 0.5 ohm shunt and a solid ground plane; DRC-clean and ordered from JLCPCB.",
+    highlights: [
+      "TPS2832 gate driver, two power MOSFETs",
+      "Op-amp current sensing on a 0.5 ohm shunt",
+      "DRC-clean, ordered from JLCPCB",
+    ],
+    tech: "KiCad / 2-layer PCB / Power electronics",
+  },
+  {
+    title: "Variable-Gain Op-Amp Amplifier PCB",
+    org: "Personal project",
+    description:
+      "Designed, ordered and assembled a variable-gain op-amp amplifier PCB (TLV2372, potentiometer gain control, BNC input). Hand-soldered the surface-mount SOIC-8 with hot air and the through-hole parts with an iron.",
+    highlights: [
+      "TLV2372 op-amp, BNC input",
+      "Potentiometer gain control",
+      "Hand-assembled, SMD and through-hole",
+    ],
+    tech: "KiCad / Analog design / Hot-air and through-hole soldering",
+  },
+  {
     title: "Autonomous Driving CNN",
     org: "Data-Efficient Intelligent Learning Lab, UT Dallas",
     description:
-      "Tuned an existing convolutional neural network with GridSearchCV as part of the lab's research team, reaching 95%+ accuracy classifying autonomous-driving images. Owned model validation: evaluated with F1-score and confusion matrices, visualized results in Seaborn, and presented the findings to faculty and graduate mentors.",
+      "Tuned an existing convolutional neural network with GridSearchCV, reaching 95%+ accuracy classifying autonomous-driving images. Owned model validation: evaluated with F1-score and confusion matrices, visualized results in Seaborn, and presented the findings to faculty and graduate mentors.",
     highlights: [
       "95%+ classification accuracy",
       "Owned validation and metrics",
@@ -49,17 +73,30 @@ const projects = [
     imgW: 916,
     imgH: 834,
   },
+  {
+    title: "Agentic Personal Operations System",
+    org: "Personal project",
+    description:
+      "Designed an orchestrator that runs parallel and scheduled Claude Code agents, connected to OpenAI Codex, across Gmail, Outlook, my calendar and coursework, from managing my inbox to finding internship and research opportunities for me. Built it on multi-agent workflows, with independent reviewer agents checking each other's work, and reverse-engineered undocumented web APIs to connect agents to services with no public integration.",
+    highlights: [
+      "Parallel and scheduled Claude Code agents",
+      "Independent reviewer agents",
+      "Connected to OpenAI Codex",
+    ],
+    tech: "Claude Code / Python / Multi-agent workflows",
+  },
 ];
 
 const experience = [
   {
-    role: "Electrical and Telemetry Lead",
+    role: "Electrical Lead",
     period: "2024 to 2026",
     org: "Plano Green Team, Solar Car Challenge. Safety Officer, 2023 to 2024",
     notes: [
       "Designed all 5 of the car's circuits in KiCad across three seasons and built each one out in hardware",
-      "Built and installed the telemetry hardware that fed live race-strategy dashboards over 500 miles at Texas Motor Speedway",
-      "Built the propulsion package: a 1,150 W solar array feeding a 5.2 kWh pack (52.1 V, 100 Ah) and motor, placed to keep EMI off the sensor and control lines",
+      "Designed the high-voltage system: a 1,150 W solar array and 5.2 kWh pack (52.1 V, 100 Ah) through disconnects and contactors to the motor controller and motor, routed to keep EMI out of the sensor and control lines",
+      "Built the LV aux system for lights and horn and the steering-wheel RF relay remote for turn signals, hazards and horn, with no cable through the column",
+      "Built the Raspberry Pi telemetry hardware (sensors, wiring, RF link) measuring pack voltage, state of charge and MPPT input power, enabling live race-strategy calls over 500 miles at Texas Motor Speedway",
       "Led and trained a 15-person electrical subteam, all first-time members",
       "Raised $50,000+ from 30+ sponsors across three seasons",
     ],
@@ -90,7 +127,7 @@ const experience = [
     org: "iCode School, Plano, TX",
     notes: [
       "Wrote the curriculum that took K-12 students from block coding to advanced Python and AI over a single year",
-      "Ran hands-on robotics and drone labs, teaching hardware and software side by side rather than as separate units",
+      "Wrote robotics and drone labs as part of the one-year curriculum",
     ],
   },
   {
@@ -109,11 +146,16 @@ const skills = [
   {
     label: "Hardware / EE",
     items:
-      "KiCad schematic design, wire harnessing and multi-family crimping, harness routing and strain relief, EMI-aware layout, driver-conscious placement, aluminum sheet metal fabrication, soldering, multimeter, Raspberry Pi integration",
+      "KiCad schematics and PCB layout, LTspice, breadboarding, oscilloscope, multimeter, power supply, function generator, surface-mount (hot air) and through-hole soldering, wire gauge and fuse sizing, wire harnessing and crimping, EMI-aware layout",
   },
   {
     label: "Software",
-    items: "Python, Java, Git/GitHub (branching, worktrees)",
+    items: "Python, Java, Git/GitHub (branching, worktrees), Raspberry Pi 5 programming",
+  },
+  {
+    label: "AI / Automation",
+    items:
+      "Claude Code, multi-agent systems, agentic workflows, parallel and scheduled agents, API reverse engineering",
   },
   {
     label: "Data / ML",
@@ -124,9 +166,9 @@ const skills = [
 
 const awards = [
   "Solar Car Challenge: 2nd, Advanced Classic Division, 2026. 4th in Nation, Advanced Classic Division, 2025. 4th in Nation, Advanced Division, 2024.",
-  "Accepted and attended Y Combinator Startup School 2026; awarded $25,000+ in AI and cloud credits (OpenAI, Anthropic, AWS).",
+  "Selected for Y Combinator Startup School 2026; $25,000+ in AI and cloud credits from OpenAI, Anthropic, xAI, AWS, Azure, and Cursor.",
   "UT Dallas Battle of the Brains coding competition, Advanced Division Finalist, 2025.",
-  "BPA Nationals, Computer Networks.",
+  "BPA Nationals, Computer Network Tech.",
 ];
 
 export default function Work() {

@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const glance = [
-  "Electrical and Telemetry Lead on Plano Green Team, 2024 to 2026. Safety Officer before that.",
+  "Electrical Lead on Plano Green Team, 2024 to 2026. Safety Officer before that.",
   "Machine learning and computer vision research at UT Dallas.",
   "Led a 15-person electrical subteam and raised $50,000+ from 30+ sponsors across three seasons.",
-  "Freshman in UT Austin ECE, class of 2030.",
+  "B.S. Electrical and Computer Engineering, Minor in Entrepreneurship, UT Austin.",
 ];
 
 const timeline = [
@@ -48,7 +48,12 @@ const timeline = [
   {
     year: "2026",
     title: "UT Austin",
-    text: "Started ECE at UT Austin as a freshman, class of 2030.",
+    text: "Started Electrical and Computer Engineering at UT Austin.",
+  },
+  {
+    year: "2026",
+    title: "Y Combinator Startup School",
+    text: "Selected for Y Combinator Startup School 2026.",
   },
 ];
 
@@ -68,8 +73,8 @@ export default function About() {
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-text-secondary">
                 I like projects where the work is real and the result matters.
-                That has led me to solar cars, machine learning research, and
-                teaching.
+                That has led me to circuit board design, solar cars, machine learning
+                research, and teaching.
               </p>
             </div>
           </motion.div>
