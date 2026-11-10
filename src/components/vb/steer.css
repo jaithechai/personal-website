@@ -1,0 +1,34 @@
+.pbs-track {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin-top: 18px;
+  background: #04120d;
+  border: 2px solid rgba(243, 241, 231, 0.2);
+}
+.pbs-edge,
+.pbs-road,
+.pbs-mid,
+.pbs-arrow {
+  fill: none;
+}
+.pbs-edge {
+  stroke: #f3f1e7;
+  stroke-width: 46;
+}
+.pbs-road {
+  stroke: #1d2a26;
+  stroke-width: 40;
+}
+.pbs-mid {
+  stroke: #e3b555;
+  stroke-width: 2;
+  stroke-dasharray: 10 12;
+  opacity: 0.7;
+}
+.pbs-arrow {
+  stroke: #e3b555;
+  stroke-width: 4;
+  stroke-linecap: round;
+}

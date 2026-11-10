@@ -1,0 +1,191 @@
+.pbo .pb-demo-ctl {
+  margin: 14px 0;
+}
+.pbo-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+@media (min-width: 820px) {
+  .pbo-panels {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.pbo-board {
+  margin-top: 28px;
+}
+.pbo-h {
+  font-family: var(--pb-f-mono), ui-monospace, monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: #e3b555;
+  margin-bottom: 12px;
+}
+.pbo-board-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+  align-items: flex-start;
+}
+.pbo-img {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 56 / 52;
+  background: #0e3b2e;
+}
+.pbo-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.pbo-hot {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #f3f1e7;
+  color: #04120d;
+  border: 2px solid #04120d;
+  box-shadow: 0 0 0 2px #f3f1e7;
+  font: 700 11px/1 var(--pb-f-mono), ui-monospace, monospace;
+  cursor: pointer;
+  transition: transform 0.15s, background-color 0.15s;
+}
+.pbo-hint {
+  margin-left: 10px;
+  padding: 2px 8px;
+  background: #e3b555;
+  color: #04120d;
+  font-size: 12px;
+}
+.pbo-hot::before,
+.pbo-hot::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+/* larger hit area */
+.pbo-hot::before {
+  inset: -6px;
+}
+.pbo-hot::after {
+  inset: -4px;
+  border: 2px solid #f3f1e7;
+  animation: pbo-ping 1.8s ease-out infinite;
+}
+.pbo-hot:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.pbo-hot[aria-pressed="true"] {
+  background: #e3b555;
+  box-shadow: 0 0 0 2px #e3b555, 0 0 0 5px #04120d, 0 0 0 7px #e3b555;
+}
+.pbo-hot[aria-pressed="true"]::after {
+  animation: none;
+  opacity: 0;
+}
+@keyframes pbo-ping {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+.pbo-hot:focus-visible,
+.pbo .pb-range:focus-visible {
+  outline: 2px solid #e3b555;
+  outline-offset: 3px;
+}
+.pbo-info {
+  flex: 1 1 240px;
+  min-width: 0;
+  color: #f3f1e7;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.pbo-val {
+  display: block;
+  margin: 4px 0 8px;
+  font-size: 1.2rem;
+  color: #f3f1e7;
+}
+.pbo-info p {
+  color: #b9d0c4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pbo-hot::before,
+  .pbo-hot::after,
+  .pbo *,
+  .pbo *::before,
+  .pbo *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* exploded layer view */
+.pbx {
+  margin-bottom: 28px;
+}
+.pbx-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: center;
+}
+.pbx-stage {
+  flex: 0 1 520px;
+  min-width: 0;
+  height: 470px;
+  display: grid;
+  place-items: center;
+  perspective: 1400px;
+  overflow: hidden;
+  background: radial-gradient(closest-side, rgba(227, 181, 85, 0.1), transparent);
+}
+.pbx-tilt {
+  position: relative;
+  width: min(66%, 330px);
+  transform-style: preserve-3d;
+}
+.pbx-plate {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 59, 46, 0.72);
+  outline: 1px solid rgba(243, 241, 231, 0.55);
+  box-shadow: 0 0 26px rgba(0, 0, 0, 0.45);
+}
+.pbx-core {
+  background: #14493a;
+  outline-color: #e3b555;
+}
+.pbx-num {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  border: 1px solid #e3b555;
+  border-radius: 50%;
+  color: #e3b555;
+}
+.pbx-plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.pbx-legend {
+  display: grid;
+  gap: 10px;
+  color: #f3f1e7;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
