@@ -1,0 +1,243 @@
+/* Agentic Ops system map */
+.pbg-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0 8px;
+}
+.pbg-btn {
+  padding: 10px 18px;
+  background: #e3b555;
+  color: #10231c;
+  border: 2px solid #e3b555;
+  border-radius: 0;
+  font: 700 12.5px/1 var(--pb-f-mono), ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.pbg-btn-alt {
+  background: transparent;
+  color: #e3b555;
+}
+.pbg-btn:hover {
+  background: #f3f1e7;
+  border-color: #f3f1e7;
+  color: #10231c;
+}
+.pbg-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  align-items: center;
+}
+.pbg-stage {
+  flex: 1 1 420px;
+  min-width: 0;
+  max-width: 680px;
+  background: radial-gradient(closest-side, rgba(227, 181, 85, 0.09), transparent);
+}
+.pbg-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.pbg-trace {
+  fill: none;
+  stroke: #c8763a;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  transition: stroke 0.2s;
+}
+.pbg-trace.pbg-on {
+  stroke: #e3b555;
+}
+.pbg-node,
+.pbg-core {
+  cursor: pointer;
+  outline: none;
+}
+.pbg-hit {
+  fill: transparent;
+}
+.pbg-pad {
+  fill: #0e3b2e;
+  stroke: #c8763a;
+  stroke-width: 5;
+  transition: stroke 0.2s, fill 0.2s;
+}
+.pbg-hole {
+  fill: #04120d;
+  stroke: #c8763a;
+  stroke-width: 2;
+}
+.pbg-node:hover .pbg-pad,
+.pbg-node.pbg-on .pbg-pad {
+  stroke: #e3b555;
+}
+.pbg-node.pbg-on .pbg-hole {
+  fill: #e3b555;
+  stroke: #e3b555;
+}
+.pbg-label {
+  font-family: var(--pb-f-mono), ui-monospace, monospace;
+  fill: #f3f1e7;
+  stroke: #082119;
+  stroke-width: 6;
+  paint-order: stroke;
+  letter-spacing: 0.06em;
+  font-size: 19px;
+  font-weight: 700;
+}
+.pbg-node.pbg-on .pbg-label {
+  fill: #e3b555;
+}
+.pbg-core-pad {
+  fill: #e3b555;
+  stroke: #082119;
+  stroke-width: 4;
+}
+.pbg-core.pbg-on .pbg-core-pad {
+  stroke: #f3f1e7;
+}
+.pbg-core-label {
+  font: 800 11.5px var(--pb-f-mono), ui-monospace, monospace;
+  fill: #10231c;
+}
+.pbg-ping {
+  fill: none;
+  stroke: #e3b555;
+  stroke-width: 3;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pbg-closed .pbg-ping {
+  animation: pbg-ping 1.6s ease-out infinite;
+}
+@keyframes pbg-ping {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+.pbg-node:focus-visible .pbg-pad,
+.pbg-core:focus-visible .pbg-core-pad {
+  stroke: #f3f1e7;
+  stroke-width: 7;
+}
+.pbg-btn:focus-visible {
+  outline: 2px solid #f3f1e7;
+  outline-offset: 3px;
+}
+.pbg-dot {
+  fill: #f3f1e7;
+  stroke: #e3b555;
+  stroke-width: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px #e3b555) drop-shadow(0 0 16px rgba(227, 181, 85, 0.7));
+}
+.pbg-ring,
+.pbg-flow {
+  fill: none;
+  stroke: #e3b555;
+  stroke-width: 4;
+  pointer-events: none;
+}
+/* bright dashes running along the leg the task is on */
+.pbg-flow {
+  stroke: #f3f1e7;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 4 16;
+  animation: pbg-flow 0.4s linear infinite;
+}
+@keyframes pbg-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+.pbg-node.pbg-seen .pbg-pad {
+  stroke: #e3b555;
+}
+.pbg-bad .pbg-dot {
+  fill: #ff6b4a;
+  stroke: #ff6b4a;
+  filter: drop-shadow(0 0 8px #ff6b4a) drop-shadow(0 0 18px rgba(255, 107, 74, 0.7));
+}
+.pbg-bad .pbg-ring,
+.pbg-bad .pbg-flow,
+.pbg-bad .pbg-node.pbg-on .pbg-pad,
+.pbg-bad .pbg-core.pbg-on .pbg-core-pad {
+  stroke: #ff6b4a;
+}
+.pbg.pbg-bad .pbg-info .pb-label {
+  color: #ff8a6e;
+}
+.pbg-pips {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+.pbg-pips i {
+  width: 24px;
+  height: 5px;
+  background: rgba(243, 241, 231, 0.2);
+}
+.pbg-pips .pbg-pip-on {
+  background: #e3b555;
+}
+.pbg-bad .pbg-pips .pbg-pip-on {
+  background: #ff6b4a;
+}
+.pbg-info {
+  flex: 1 1 260px;
+  min-width: 0;
+  min-height: 190px;
+  color: #f3f1e7;
+}
+.pbg-step {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.pbg-kids {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-top: 18px;
+}
+.pbg-kids dt {
+  font: 700 12px var(--pb-f-mono), ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #e3b555;
+}
+.pbg-kids dd {
+  margin: 2px 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #b9d0c4;
+}
+@media (max-width: 560px) {
+  .pbg-label {
+    font-size: 20px;
+  }
+  .pbg-core-label {
+    font-size: 12.5px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pbg-closed .pbg-ping,
+  .pbg-flow {
+    animation: none;
+  }
+  .pbg * {
+    transition: none !important;
+  }
+}

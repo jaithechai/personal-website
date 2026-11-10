@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { projects, person, type Project } from "@/lib/content";
+import AgentGraph from "./AgentGraph";
 import BuckDemo from "./BuckDemo";
 import OpAmpDemo from "./OpAmpDemo";
 import SolarCar from "./SolarCar";
@@ -110,6 +111,7 @@ function Card({ pr, i }: { pr: Project; i: number }) {
         {pr.id === "buck-converter" && <BuckDemo />}
         {pr.id === "op-amp-amplifier" && <OpAmpDemo />}
         {pr.id === "driving-cnn" && <SteerDemo />}
+        {pr.id === "agentic-ops" && <AgentGraph />}
       </div>
     </motion.article>
   );
