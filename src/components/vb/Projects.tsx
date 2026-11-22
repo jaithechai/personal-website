@@ -7,6 +7,7 @@ import { projects, person, type Project } from "@/lib/content";
 import AgentGraph from "./AgentGraph";
 import BuckDemo from "./BuckDemo";
 import OpAmpDemo from "./OpAmpDemo";
+import RunnerDemo from "./RunnerDemo";
 import SolarCar from "./SolarCar";
 import SteerDemo from "./SteerDemo";
 
@@ -106,8 +107,16 @@ function Card({ pr, i }: { pr: Project; i: number }) {
                 <li key={f}>{f}</li>
               ))}
             </ul>
+            {pr.links.map((l) => (
+              <p key={l.href} className="pb-body" style={{ marginTop: 18 }}>
+                <a href={l.href} target="_blank" rel="noopener noreferrer" className="pb-link">
+                  {l.label}
+                </a>
+              </p>
+            ))}
           </div>
         </div>
+        {pr.id === "forge-runner" && <RunnerDemo />}
         {pr.id === "buck-converter" && <BuckDemo />}
         {pr.id === "op-amp-amplifier" && <OpAmpDemo />}
         {pr.id === "driving-cnn" && <SteerDemo />}

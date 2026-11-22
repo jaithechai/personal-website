@@ -1,0 +1,88 @@
+/* Forge Runner top-down floor animation */
+.pbr {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin-top: 18px;
+  background: #04120d;
+  border: 2px solid rgba(243, 241, 231, 0.2);
+}
+.pbr-tape {
+  fill: none;
+  stroke: #f3f1e7;
+  stroke-width: 6;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+.pbr-strip {
+  fill: none;
+  stroke: #f3f1e7;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke 0.2s;
+}
+.pbr-counter {
+  fill: #0e3b2e;
+  stroke: #c8763a;
+  stroke-width: 3;
+}
+.pbr-top {
+  fill: #0e3b2e;
+  stroke: #c8763a;
+  stroke-width: 3;
+  transition: stroke 0.2s;
+}
+.pbr-chair {
+  fill: #0e3b2e;
+  stroke: rgba(243, 241, 231, 0.35);
+  stroke-width: 2;
+}
+.pbr-text {
+  font: 700 20px var(--pb-f-mono), ui-monospace, monospace;
+  letter-spacing: 0.06em;
+  fill: #b9d0c4;
+  text-anchor: middle;
+}
+/* the table the robot is heading for */
+.pbr[data-t="1"] .pbr-t1 .pbr-top,
+.pbr[data-t="2"] .pbr-t2 .pbr-top,
+.pbr[data-t="3"] .pbr-t3 .pbr-top,
+.pbr[data-t="1"] .pbr-t1 .pbr-strip,
+.pbr[data-t="2"] .pbr-t2 .pbr-strip,
+.pbr[data-t="3"] .pbr-t3 .pbr-strip {
+  stroke: #e3b555;
+}
+.pbr[data-t="1"] .pbr-t1 .pbr-text,
+.pbr[data-t="2"] .pbr-t2 .pbr-text,
+.pbr[data-t="3"] .pbr-t3 .pbr-text {
+  fill: #e3b555;
+}
+.pbr-ring {
+  fill: none;
+  stroke: #e3b555;
+  stroke-width: 3;
+}
+.pbr-body {
+  fill: #e3b555;
+  stroke: #04120d;
+  stroke-width: 2;
+}
+.pbr-wheel {
+  fill: #f3f1e7;
+  stroke: #04120d;
+  stroke-width: 1.5;
+}
+.pbr-cup {
+  fill: #f3f1e7;
+  stroke: #04120d;
+  stroke-width: 2;
+}
+.pbr-eye {
+  fill: #04120d;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pbr * {
+    transition: none !important;
+  }
+}

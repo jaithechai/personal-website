@@ -128,6 +128,24 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: "forge-runner",
+    name: "Forge Runner Food-Runner Robot",
+    shortName: "Forge Runner",
+    org: "UT SEC Makeathon 2026",
+    dates: null,
+    description:
+      "Built a line-following robot that carries orders to tables in a counter-service restaurant; our team won Most Technical Project. Wrote the ESP32 firmware: it follows a tape line with two light sensors, counts cross strips to find the right table, stops when the ultrasonic sensor sees something in its path, and polls the ordering site for its next task. Designed the electronics around two stepper motors and drew the schematic in KiCad, modeled the 3D-printed body in OpenSCAD, and built the website where guests order from a table QR code and staff send the robot.",
+    facts: [
+      "Our team won Most Technical Project",
+      "Firmware, electronics, CAD and website were my work",
+      "Guests order by QR code, staff dispatch in one tap",
+    ],
+    tags: ["ESP32", "Arduino C++", "KiCad", "OpenSCAD", "3D printing", "Next.js"],
+    image: null,
+    imageSize: null,
+    links: [{ label: "Live site", href: "https://forge-runner-rho.vercel.app" }],
+  },
+  {
     id: "buck-converter",
     name: "Synchronous Buck Converter PCB",
     shortName: "Buck Converter PCB",
@@ -328,6 +346,7 @@ export const skills: { label: string; items: string[] }[] = [
 ];
 
 export const awards: { name: string; detail: string; year: string | null }[] = [
+  { name: "UT SEC Makeathon", detail: "Most Technical Project, team award", year: "2026" },
   { name: "Solar Car Challenge", detail: "2nd, Advanced Classic Division", year: "2026" },
   { name: "Solar Car Challenge", detail: "4th in Nation, Advanced Classic Division", year: "2025" },
   { name: "Solar Car Challenge", detail: "4th in Nation, Advanced Division", year: "2024" },
